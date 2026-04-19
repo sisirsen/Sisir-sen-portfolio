@@ -17,23 +17,9 @@ This portfolio highlights my journey as a developer, featuring real-world projec
 * HTML
 * CSS(Tailwind)
 * JavaScript
-* React
-
-
-
-# Featured Projects
-
-* Todo App
-* Weather App
-* More projects coming soon...
+* React Js
 
 
 # What I Learned
 
-* Strong fundamentals of DOM manipulation
-* Handling APIs using async/await
-* Writing clean and maintainable code
-* Building responsive layouts
 
-
-⭐ If you like the project, feel free to star the repo!
