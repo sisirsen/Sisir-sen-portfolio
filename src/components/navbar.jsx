@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
 import icons from "../utils/iconAccess";
+import { useLocation } from 'react-router'
 
 function Navbar() {
   const [open, setOpen] = useState(false);
+
+
   const navItems = [
     { id: 1, item: "Home", section: "#home" },
     { id: 2, item: "About", section: "#about" },
@@ -10,6 +13,12 @@ function Navbar() {
     { id: 4, item: "Projects", section: "#projects" },
     { id: 5, item: "Contact", section: "#contact" },
   ];
+
+
+  let location = useLocation()
+
+
+
 
   return (
     <div className="fixed top-0 z-50 flex w-full items-center border-b border-white/10 bg-black/10 px-4 py-4 backdrop-blur-2xl md:px-8">
@@ -35,22 +44,23 @@ function Navbar() {
           <a
             key={item.id}
             href={item.section}
-            className={`relative pb-2 font-medium transition-all duration-300 text-white hover:underline hover:text-cyan-500 underline-offset-8`}
+            className={`relative pb-2 font-medium transition-all ${location.hash == item.section ? "text-cyan-500 underline underline-offset-8"
+              : "text-white hover:text-cyan-500 hover:underline hover:underline-offset-8"
+              } duration-300   `}
           >
             {item.item}
 
-          
+
           </a>
         ))}
       </div>
 
       {/* Mobile Navbar */}
       <div
-        className={`absolute right-3 top-16 w-[220px] rounded-2xl border border-cyan-800 bg-[#0B1120] p-5 shadow-lg transition-all duration-300 md:hidden ${
-          open
-            ? "visible translate-y-0 opacity-100"
-            : "invisible -translate-y-5 opacity-0"
-        }`}
+        className={`absolute right-3 top-16 w-[220px] rounded-2xl border border-cyan-800 bg-[#0B1120] p-5 shadow-lg transition-all duration-300 md:hidden ${open
+          ? "visible translate-y-0 opacity-100"
+          : "invisible -translate-y-5 opacity-0"
+          }`}
       >
         <div className="flex flex-col gap-5 text-lg">
           {navItems.map((item) => (
