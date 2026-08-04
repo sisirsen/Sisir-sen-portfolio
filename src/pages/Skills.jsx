@@ -1,9 +1,118 @@
 import React from "react";
 import icons from "../utils/iconAccess";
+import { SiPython, SiDjango, SiPostman } from "react-icons/si";
+import {
+  FaUsers,
+  FaPuzzlePiece,
+  FaClock,
+  FaCheckCircle,
+} from "react-icons/fa";
+
+import { HiChatBubbleLeftRight } from "react-icons/hi2";
+
+import { BsLightningChargeFill } from "react-icons/bs";
 
 function Skills() {
+
+  const professionalSkills = [
+  {
+    id: 1,
+    icon: HiChatBubbleLeftRight,
+    title: "Communication",
+  },
+  {
+    id: 2,
+    icon: FaUsers,
+    title: "Teamwork",
+  },
+  {
+    id: 3,
+    icon: FaPuzzlePiece,
+    title: "Problem Solving",
+  },
+  {
+    id: 4,
+    icon: FaClock,
+    title: "Punctuality",
+  },
+  {
+    id: 5,
+    icon: BsLightningChargeFill,
+    title: "Adaptability",
+  },
+  {
+    id: 6,
+    icon: FaCheckCircle,
+    title: "Reliability",
+  },
+];
+
+const tools = [
+  {
+    id: 1,
+    image: icons.html,
+    title: "HTML",
+  },
+  {
+    id: 2,
+    image: icons.tailwind,
+    title: "Tailwind CSS",
+  },
+  {
+    id: 3,
+    image: icons.js,
+    title: "JavaScript",
+  },
+  {
+    id: 4,
+    image: icons.react,
+    title: "React JS",
+  },
+  {
+    id: 5,
+    icon: SiPython,
+    title: "Python",
+  },
+  {
+    id: 6,
+    icon: SiDjango,
+    title: "Django",
+  },
+  {
+    id: 7,
+    image: icons.git,
+    title: "Git",
+  },
+  {
+    id: 8,
+    image: icons.github,
+    title: "GitHub",
+  },
+  {
+    id: 9,
+    icon: SiPostman,
+    title: "Postman",
+  },
+  {
+    id: 10,
+    image: icons.vercel,
+    title: "Vercel",
+  },
+  {
+    id: 11,
+    image: icons.figma,
+    title: "Figma",
+  },
+  {
+    id: 12,
+    image: icons.vscode,
+    title: "VS Code",
+  },
+];
+
+
   return (
-    <div id="Skills" className="p-10 py-27">
+    <div id="skills" className=" py-20">
       <div className="flex items-center justify-center text-white text-2xl md:text-4xl font-extrabold underline gap-3 underline-offset-11 decoration-cyan-500">
         <span className="text-white">
           My <span className="text-cyan-500">Skills</span>
@@ -12,62 +121,34 @@ function Skills() {
 
       {/* Professional Skills */}
 
-      <div>
-        <div className="text-2xl md:text-3xl font-bold mt-20 flex justify-center ">
-          <span className="text-white ">
-            Professional
-            <span className="bg-gradient-to-r from-cyan-500 to-purple-500 bg-clip-text text-transparent pl-2">
-              Skills
-            </span>
+    <div className="flex text-2xl md:text-3xl font-black mt-20 justify-center">
+        <span className="text-white">
+          Soft
+          <span className="bg-gradient-to-r from-cyan-500 to-purple-500 bg-clip-text text-transparent pl-2">
+            Skills
           </span>
-        </div>
-
-        <div className=" mt-10  flex flex-wrap justify-center md:flex gap-9 md:justify-center">
-          <div className="h-[100px] w-[120px] md:h-[150px] md:w-[200px] md:hover:-translate-y-1 md:ease-in-out md:hover:shadow-[0_20px_18px_rgb(255,255,255,0.1)] md:transition-all md:hover:duration-500 shadow-2xl rounded-2xl bg-[#1E293B] overflow-hidden">
-            <img
-              className="h-[60px] w-[120px] md:h-[100px] md:w-[250px] "
-              src={icons.communication}
-              alt="communication"
-            />
-            <span className="text-white font-semibold text-sm flex items-center justify-center mt-3 ">
-              Communication
-            </span>
-          </div>
-
-          <div className="h-[100px] w-[120px] md:h-[150px] md:w-[200px] md:hover:-translate-y-1 md:ease-in-out md:hover:shadow-[0_20px_18px_rgb(255,255,255,0.1)] md:transition-all md:hover:duration-500 shadow-2xl rounded-2xl bg-[#1E293B] overflow-hidden">
-            <img
-              className="h-[60px] w-[120px] md:h-[100px] md:w-[250px] "
-              src={icons.teamwork}
-              alt="communication"
-            />
-            <span className="text-white font-semibold text-sm flex items-center justify-center mt-3 ">
-              Team Work
-            </span>
-          </div>
-
-          <div className="h-[100px] w-[120px] md:h-[150px] md:w-[200px] md:hover:-translate-y-1 md:ease-in-out md:hover:shadow-[0_20px_18px_rgb(255,255,255,0.1)] md:transition-all md:hover:duration-500 shadow-2xl rounded-2xl bg-[#1E293B] overflow-hidden">
-            <img
-              className="h-[60px] w-[120px] md:h-[100px] md:w-[250px] "
-              src={icons.problemsolving}
-              alt="communication"
-            />
-            <span className="text-white font-semibold text-sm flex items-center justify-center mt-3 ">
-              Problem Solving
-            </span>
-          </div>
-
-          <div className="h-[100px] w-[120px] md:h-[150px] md:w-[200px] md:hover:-translate-y-1 md:ease-in-out md:hover:shadow-[0_20px_18px_rgb(255,255,255,0.1)] md:transition-all md:hover:duration-500 shadow-2xl rounded-2xl bg-[#1E293B] overflow-hidden">
-            <img
-              className="h-[60px] w-[120px] md:h-[100px] md:w-[250px] "
-              src={icons.panctuality}
-              alt="communication"
-            />
-            <span className="text-white font-semibold text-sm mt-3 flex items-center justify-center ">
-              Punctuality
-            </span>
-          </div>
-        </div>
+        </span>
       </div>
+
+        <div className="flex justify-center flex-wrap gap-6 mt-10">
+  {professionalSkills.map((skill) => {
+    const Icon = skill.icon;
+
+    return (
+      <div
+        key={skill.id}
+        className="bg-[#1E293B] rounded-2xl h-[110px] w-[160px] md:h-[130px] md:w-[170px] flex flex-col items-center justify-center gap-4 border border-transparent hover:border-cyan-400 hover:-translate-y-1 hover:shadow-[0_0_25px_rgba(34,211,238,.25)] transition-all duration-300"
+      >
+        <Icon className="text-3xl md:text-4xl text-cyan-400 transition-transform duration-300 group-hover:scale-110" />
+
+        <h3 className="text-white font-semibold text-center">
+          {skill.title}
+        </h3>
+      </div>
+    );
+  })}
+</div>
+      
 
       {/*Tools & Technologies */}
 
@@ -80,87 +161,31 @@ function Skills() {
         </span>
       </div>
 
-      <div className="mt-10 flex flex-wrap md:flex md:flex-wrap justify-center  gap-9 ">
-        <div className="h-[80px] w-[120px] md:h-[120px] md:w-[200px] md:hover:-translate-y-1 md:ease-in-out md:hover:shadow-[0_20px_18px_rgb(255,255,255,0.1)] md:transition-all md:hover:duration-500 bg-[#1E293B] flex flex-col items-center justify-center text-white gap-2 rounded-2xl shadow-2xl">
-          <img className="h-[25px] w-[25px] md:h-[30px] md:w-[30px]" src={icons.html} alt="htmllogo" />
-          <span className="text-sm font-semibold">HTML</span>
-        </div>
+      <div className="mt-10 flex flex-wrap justify-center gap-6">
+  {tools.map((tool) => (
+    <div
+      key={tool.id}
+      className="h-[110px] w-[160px] md:h-[120px] md:w-[200px]
+      bg-[#1E293B] rounded-2xl shadow-2xl
+      flex flex-col items-center justify-center gap-2
+      md:hover:-translate-y-1
+      md:hover:shadow-[0_20px_18px_rgb(255,255,255,0.1)]
+      transition-all duration-500"
+    >
+      {tool.icon ? (
+  <tool.icon className={`text-4xl md:h-10 md:w-10 h-8 w-8  ${tool.icon===SiPython ? 'text-yellow-400': tool.icon===SiPostman? "text-orange-500" : 'text-green-500'}`}/>
+) : (
+  <img src={tool.image} alt={tool.title} className="md:h-10 md:w-10 h-8 w-8 rounded-lg object-contain" />
+)}
 
-        <div className="h-[80px] w-[120px] md:h-[120px] md:w-[200px] md:hover:-translate-y-1 md:ease-in-out md:hover:shadow-[0_20px_18px_rgb(255,255,255,0.1)] md:transition-all md:hover:duration-500 bg-[#1E293B] flex flex-col items-center justify-center text-white gap-2 rounded-2xl shadow-2xl">
-          <img
-            className=" h-[25px] w-[35px] md:h-[27px] md-w-[47px]"
-            src={icons.tailwind}
-            alt="tailwindLogo"
-          />
-          <span className="text-sm font-semibold">Tailwind</span>
-        </div>
-
-        <div className="h-[80px] w-[120px] md:h-[120px] md:w-[200px] md:hover:-translate-y-1 md:ease-in-out md:hover:shadow-[0_20px_18px_rgb(255,255,255,0.1)] md:transition-all md:hover:duration-500 bg-[#1E293B] flex flex-col items-center justify-center text-white gap-2 rounded-2xl shadow-2xl">
-          <img className="h-[25px] w-[25px] md:h-[30px] md:w-[30px]" src={icons.js} alt="jslogo" />
-          <span className="text-sm font-semibold">JavaScript</span>
-        </div>
-
-        <div className="h-[80px] w-[120px] md:h-[120px] md:w-[200px] md:hover:-translate-y-1 md:ease-in-out md:hover:shadow-[0_20px_18px_rgb(255,255,255,0.1)] md:transition-all md:hover:duration-500 bg-[#1E293B] flex flex-col items-center justify-center text-white gap-2 rounded-2xl shadow-2xl">
-          <img
-            className="h-[25px] w-[27px]  md:h-[35px] md:w-[37px]"
-            src={icons.react}
-            alt="react logo"
-          />
-          <span className="text-sm font-semibold">React Js</span>
-        </div>
-
-        <div className="h-[80px] w-[120px] md:h-[120px] md:w-[200px] md:hover:-translate-y-1 md:ease-in-out md:hover:shadow-[0_20px_18px_rgb(255,255,255,0.1)] md:transition-all md:hover:duration-500 bg-[#1E293B] flex flex-col items-center justify-center text-white gap-2 rounded-2xl shadow-2xl">
-          <img
-            className="h-[30px] w-[26px] md:h-[40px] md:w-[35px]"
-            src={icons.java}
-            alt="java logo"
-          />
-          <span className="text-sm font-semibold">Java</span>
-        </div>
-
-        <div className="h-[80px] w-[120px] md:h-[120px] md:w-[200px] md:hover:-translate-y-1 md:ease-in-out md:hover:shadow-[0_20px_18px_rgb(255,255,255,0.1)] md:transition-all md:hover:duration-500 bg-[#1E293B] flex flex-col items-center justify-center text-white gap-2 rounded-2xl shadow-2xl">
-          <img className="h-[30px] w-[30px] md:h-[40px] md:w-[37px]" src={icons.git} alt="git logo" />
-         <span className="text-sm font-semibold">Git</span>
-        </div>
-
-        <div className="h-[80px] w-[120px] md:h-[120px] md:w-[200px] md:hover:-translate-y-1 md:ease-in-out md:hover:shadow-[0_20px_18px_rgb(255,255,255,0.1)] md:transition-all md:hover:duration-500 bg-[#1E293B] flex flex-col items-center justify-center text-white gap-2 rounded-2xl shadow-2xl">
-          <img
-            className="h-[30px] w-[30px] md:h-[40px] md:w-[40px] rounded"
-            src={icons.github}
-            alt="GitHub"
-          />
-          <span className="text-sm font-semibold">GitHub</span>
-        </div>
-
-        <div className="h-[80px] w-[120px] md:h-[120px] md:w-[200px] md:hover:-translate-y-1 md:ease-in-out md:hover:shadow-[0_20px_18px_rgb(255,255,255,0.1)] md:transition-all md:hover:duration-500 bg-[#1E293B] flex flex-col items-center justify-center text-white gap-2 rounded-2xl shadow-2xl">
-          <img
-            className="h-[30px] w-[30px] md:h-[40px] md:w-[40px] rounded"
-            src={icons.vercel}
-            alt="vercellogo"
-          />
-         <span className="text-sm font-semibold">Vercel</span>
-        </div>
-
-        <div className="h-[80px] w-[120px] md:h-[120px] md:w-[200px] md:hover:-translate-y-1 md:ease-in-out md:hover:shadow-[0_20px_18px_rgb(255,255,255,0.1)] md:transition-all md:hover:duration-500 bg-[#1E293B] flex flex-col items-center justify-center text-white gap-2 rounded-2xl shadow-2xl">
-          <img
-            className="h-[30px] w-[30px] md:h-[40px] md:w-[40px] rounded"
-            src={icons.figma}
-            alt="figma"
-          />
-         <span className="text-sm font-semibold">Figma</span>
-        </div>
-
-        <div className="h-[80px] w-[120px] md:h-[120px] md:w-[200px] md:hover:-translate-y-1 md:ease-in-out md:hover:shadow-[0_20px_18px_rgb(255,255,255,0.1)] md:transition-all md:hover:duration-500 bg-[#1E293B] flex flex-col items-center justify-center text-white gap-2 rounded-2xl shadow-2xl">
-          <img
-            className="h-[27px] w-[27px] md:h-[40px] md:w-[40px] rounded"
-            src={icons.vscode}
-            alt="vscode"
-          />
-         <span className="text-sm font-semibold">VS Code</span>
-        </div>
-      </div>
+      <span className="text-white font-semibold">
+        {tool.title}
+      </span>
     </div>
+  ))}
+</div>
+</div>
   );
 }
 
-export default Skills;
+export default Skills

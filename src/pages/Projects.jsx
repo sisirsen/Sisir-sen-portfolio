@@ -3,263 +3,295 @@ import icons from "../utils/iconAccess";
 import { FiExternalLink, FiGithub } from "react-icons/fi";
 
 function Projects() {
-  return (
-    <div id="Projects" className="bg-[#020617]  py-20 md:p-17 md:py-27">
 
-      <div className="flex items-center justify-center text-2xl md:text-4xl text-cyan-500 md:font-extrabold underline underline-offset-10">
+  const projects = [
+  {
+    id: 1,
+    number: "01",
+    title: "NEXORA",
+    subtitle: "Crypto Dashboard & Learning Platform",
+    image: icons.nexora,
+    description:
+      "A cryptocurrency dashboard that provides live market data, trending coins, global statistics, interactive charts and beginner-friendly crypto learning resources.",
+
+    technologies: [
+      "React.js",
+      "Tailwind CSS",
+      "CoinGecko API",
+    ],
+
+    features: [
+      "Live Cryptocurrency Data",
+      "Trending Coins",
+      "Global Statistics",
+      "Learning Hub",
+      "Responsive Design",
+      "learning Page",
+      "Crypto News",
+      "Crypto Calender"
+    ],
+
+    live: "https://nexora-silk-mu.vercel.app/",
+    github: "https://github.com/sisirsen/Nexora",
+  },
+  {
+  id: 2,
+  number: "02",
+  title: "PORTFOLIO",
+  subtitle: "Personal Developer Portfolio",
+  image: icons.portfolioapp,
+  description:
+    "A modern and responsive portfolio website built to showcase my projects, skills, journey, and contact information with smooth animations and a clean user interface.",
+
+  technologies: [
+    "React.js",
+    "Tailwind CSS",
+  ],
+
+  features: [
+    "Responsive Design",
+    "Modern UI",
+    "Interactive Timeline",
+    "Project Showcase",
+    "Skills Section",
+    "Contact Form",
+    "Smooth Animations",
+    "Dark Theme",
+  ],
+
+  live: "https://sisirsen-portfolio.vercel.app/",
+  github: "https://github.com/sisirsen/Sisirsen-portfolio",
+},
+
+{
+  id: 3,
+  number: "03",
+  title: "PLUVIA",
+  subtitle: "Weather Forecast Application",
+  image: icons.weatherapp,
+  description:
+    "A responsive weather application that fetches real-time weather information using the OpenWeather API and displays temperature, humidity, wind speed, and weather conditions.",
+
+  technologies: [
+    "HTML",
+    "Tailwind CSS",
+    "JavaScript",
+    "OpenWeather API",
+  ],
+
+  features: [
+    "Real-time Weather",
+    "City Search",
+    "Temperature Details",
+    "Humidity & Wind",
+    "Weather Icons",
+    "Responsive Design",
+    "API Integration",
+  ],
+
+  live: "https://pluvia-sable.vercel.app/",
+  github: "https://github.com/sisirsen/Pluvia",
+},
+
+{
+  id: 4,
+  number: "04",
+  title: "TASK MANAGEMENT APP",
+  subtitle: "Task & Productivity Manager",
+  image: icons.taskmanagement,
+  description:
+    "A task management application that allows users to add, complete, and delete tasks. It also includes a random fact section powered by an external API for a more engaging experience.",
+
+  technologies: [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "REST API",
+  ],
+
+  features: [
+    "Add Tasks",
+    "Delete Tasks",
+    "Mark as Completed",
+    "Task Management",
+    "Random Fact Box",
+    "REST API Integration",
+    "Responsive Design",
+  ],
+
+  live: "https://todo-list-iota-silk-22.vercel.app/",
+  github: "https://github.com/sisirsen/Task-Manager-App",
+},
+
+{
+  id: 5,
+  number: "05",
+  title: "QUANTIX",
+  subtitle: "Modern Calculator Application",
+  image: icons.calculatorapp,
+  description:
+    "A modern calculator built with React featuring keyboard support, responsive design, clean UI, and smooth user interactions for everyday calculations.",
+
+  technologies: [
+    "React.js",
+    "Tailwind CSS",
+  ],
+
+  features: [
+    "Keyboard Support",
+    "Dark Theme",
+    "Responsive Layout",
+    "Clean UI",
+    "Modern Design",
+    "Error Handling",
+  ],
+
+  live: "https://quantix-mu.vercel.app/",
+  github: "https://github.com/sisirsen/Quantix",
+},
+];
+
+ 
+
+  return (
+    <div id="projects" className="bg-[#020617]  py-20">
+
+       <div className="flex items-center justify-center text-2xl md:text-4xl text-cyan-500 font-extrabold underline underline-offset-10">
         <span className="text-white">
           My <span className="text-cyan-500">Projects</span>
         </span>
       </div>
 
-      {/* project 1 : Task manager app */}
 
-      <div className="mt-20 gap-8 flex flex-wrap">
+<div className=" px-10 mx-auto">
 
+  {projects.map((project, index) => (
 
-        <div className="h-[385px] w-[300px] md:h-[450px] md:w-[440px]  md:hover:shadow-[0_20px_18px_rgb(255,255,255,0.1)] md:transition-all md:hover:duration-500 bg-[#1E293B] rounded-xl overflow-hidden ">
+    <section key={project.id} className=" mt-15">
+
+      {/* Number */}
+
+      <span className="text-cyan-400 py-1 px-3 bg-gray-600 rounded-lg text-lg ">
+        {project.number}
+      </span>
+
+      {/* Title */}
+
+      <h1 className="text-3xl md:text-5xl font-black text-white mt-3">
+        {project.title}
+      </h1>
+
+      <h2 className="text-xl text-gray-400 mt-2">
+        {project.subtitle}
+      </h2>
+
+      {/* Tech */}
+
+      <div className="flex flex-wrap gap-3 mt-6">
+
+        {project.technologies.map((tech) => (
+
+          <span
+            key={tech}
+            className="text-cyan-400"
+          >
+            {tech}
+          </span>
+
+        ))}
+
+      </div>
+
+      <div className="h-px bg-slate-700 my-10"></div>
+
+      {/* Image + Description */}
+
+      <div
+        className={`flex flex-col lg:flex-row items-center gap-16 ${
+          index % 2 !== 0
+            ? "lg:flex-row-reverse"
+            : ""
+        }`}
+      >
+
+        <div className="lg:w-1/2">
+
           <img
-            className="h-[160px] w-[400px] md:h-[250px] md:w-[500px] md:hover:scale-105 md:transition-all md:duration-500 "
-            src={icons.taskmanagementapp}
-            alt="taskmanagementapp"
+            src={project.image}
+            alt={project.title}
+            className="rounded-xl"
           />
-          <div className="mt-4 pl-3 md:pl-5  ">
-            <span className="text-white font-bold text-xl">
-              Task Management App
-            </span>
 
-            <span className="flex items-center justify-center mt-3 text-gray-300 ">
-              It is a Task management app with add, delete, mark as done
-              features with a fact box.
-            </span>
-
-            <div className="mt-4 flex gap-2 ">
-              <span className="py-1 px-3 flex items-center text-sm bg-slate-600 font-bold text-gray-200 rounded-2xl">
-                HTML
-              </span>
-              <span className="py-1 px-3 flex items-center text-sm bg-slate-600 font-bold text-gray-200 rounded-2xl">
-                Tailwind CSS
-              </span>
-              <span className="py-1 px-3 flex items-center text-sm bg-slate-600 font-bold text-gray-200 rounded-2xl">
-                JavaScript
-              </span>
-            </div>
-          </div>
-          <div className="mt-3 pl-4 md:mt-4 md:pl-7 flex gap-4">
-            <a
-              href="https://todo-list-iota-silk-22.vercel.app/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-cyan-400 flex items-center gap-1 text-md font-extrabold md:hover:text-purple-500 transition duration-200"
-            >
-              <FiExternalLink /> <span>Live Link</span>
-            </a>
-
-            <a
-              href="https://github.com/sisirsen/Task-Manager-App"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-cyan-400 flex items-center gap-1 text-md font-extrabold md:hover:text-purple-500  transition duration-200"
-            >
-              <FiGithub /> <span>Code</span>
-            </a>
-          </div>
         </div>
 
-        {/* project 2 : Weather app */}
+        <div className="lg:w-1/2">
 
-        <div className="h-[390px] w-[300px] md:h-[450px] md:w-[440px] md:hover:shadow-[0_20px_18px_rgb(255,255,255,0.1)] md:transition-all md:hover:duration-500 bg-[#1E293B] rounded-xl overflow-hidden">
-          <img
-            className="h-[160px] w-[400px] md:h-[250px] md:w-[500px] md:hover:scale-105 transition-all duration-500"
-            src={icons.weatherapp}
-            alt="taskmanagementapp"
-          />
-          <div className="mt-4 md:pl-5 pl-3">
-            <span className="text-white font-bold text-xl">
-              Weather App(Pluvia)
-            </span>
+          <p className="text-gray-300 leading-8">
+            {project.description}
+          </p>
 
-            <span className="flex mt-3 text-gray-300 ">
-              It is a weather informer web application, tracks real time weather
-              data with API.
-            </span>
-
-            <div className="mt-4 flex gap-2 ">
-              <span className="py-1 px-3 flex items-center text-sm bg-slate-600 font-bold text-gray-200 rounded-2xl">
-                HTML
-              </span>
-              <span className="py-1 px-3 flex items-center text-sm bg-slate-600 font-bold text-gray-200 rounded-2xl">
-                Tailwind CSS
-              </span>
-              <span className="py-1 px-3 flex items-center text-sm bg-slate-600 font-bold text-gray-200 rounded-2xl">
-                JavaScript
-              </span>
-            </div>
-          </div>
-          <div className="mt-4 pl-4 md:pl-7 flex gap-4">
-            <a
-              href="https://pluvia-sable.vercel.app/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-cyan-400 flex items-center gap-1 text-md font-extrabold md:hover:text-purple-500  transition duration-200"
-            >
-              <FiExternalLink /> <span>Live Link</span>
-            </a>
-
-            <a
-              href="https://github.com/sisirsen/Pluvia"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-cyan-400 flex items-center gap-1 text-md font-extrabold md:hover:text-purple-500  transition duration-200"
-            >
-              <FiGithub /> <span>Code</span>
-            </a>
-          </div>
-        </div>
-
-        {/* project 3 : Calculator app */}
-
-        <div className="h-[370px] w-[300px] md:h-[450px] md:w-[440px] md:hover:shadow-[0_20px_18px_rgb(255,255,255,0.1)] md:transition-all md:hover:duration-500 bg-[#1E293B] rounded-xl overflow-hidden">
-          <img
-            className="h-[160px] w-[300px] md:h-[250px] md:w-[500px] md:hover:scale-105 transition-all duration-500 "
-            src={icons.calculatorapp}
-            alt="taskmanagementapp"
-          />
-          <div className="mt-4 pl-3 md:pl-5">
-            <span className="text-white font-bold text-xl">
-              Calculator App(Quantix)
-            </span>
-
-            <span className="flex mt-3 text-gray-300 ">
-              It is a calculator web application made for solving mathematical
-              calculations.
-            </span>
-
-            <div className="mt-4 flex gap-2 ">
-              <span className="py-1 px-3 flex items-center text-sm bg-slate-600 font-bold text-gray-200 rounded-2xl">
-                Tailwind CSS
-              </span>
-              <span className="py-1 px-3 flex items-center text-sm bg-slate-600 font-bold text-gray-200 rounded-2xl">
-                React Js
-              </span>
-            </div>
-          </div>
-          <div className="mt-4 pl-4 md:pl-7 flex gap-4">
-            <a
-              href="https://quantix-mu.vercel.app/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-cyan-400 flex items-center gap-1 text-md font-extrabold md:hover:text-purple-500  transition duration-200"
-            >
-              <FiExternalLink /> <span>Live Link</span>
-            </a>
-
-            <a
-              href="https://github.com/sisirsen/Quantix"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-cyan-400 flex items-center gap-1 text-md font-extrabold md:hover:text-purple-500  transition duration-200"
-            >
-              <FiGithub /> <span>Code</span>
-            </a>
-          </div>
-        </div>
-
-        {/* project 4 : portfolio app */}
-
-        <div className="h-[390px] w-[300px] md:hover:shadow-[0_20px_18px_rgb(255,255,255,0.1)] md:transition-all md:hover:duration-500 md:h-[450px] md:w-[440px] bg-[#1E293B] rounded-xl overflow-hidden">
-          <img
-            className="h-[160px] w-[300px] md:h-[250px] md:w-[500px] md:hover:scale-105 transition-all duration-500  "
-            src={icons.portfolioapp}
-            alt="taskmanagementapp"
-          />
-          <div className="mt-4 pl-3 md:pl-5">
-            <span className="text-white font-bold text-xl">
-              Portfolio Website
-            </span>
-
-            <span className="flex mt-3 text-gray-300 ">
-              It is my personal portfolio to showcase my journey, along with my skills and projects.
-            </span>
-
-            <div className="mt-4 flex gap-2 ">
-              <span className="py-1 px-3 flex items-center text-sm bg-slate-600 font-bold text-gray-200 rounded-2xl">
-                Tailwind CSS
-              </span>
-              <span className="py-1 px-3 flex items-center text-sm bg-slate-600 font-bold text-gray-200 rounded-2xl">
-                React Js
-              </span>
-            </div>
-          </div>
-          <div className="mt-4 pl-4 md:pl-7 flex gap-4">
-            <a
-              href="https://sisirsen-portfolio.vercel.app/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-cyan-400 flex items-center gap-1 text-md font-extrabold md:hover:text-purple-500  transition duration-200"
-            >
-              <FiExternalLink /> <span>Live Link</span>
-            </a>
-
-            <a
-              href="https://github.com/sisirsen/Sisirsen-portfolio"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-cyan-400 flex items-center gap-1 text-md font-extrabold md:hover:text-purple-500  transition duration-200"
-            >
-              <FiGithub /> <span>Code</span>
-            </a>
-          </div>
-        </div>
-
-        {/* crypto app */}
-
-        <div className="h-[390px] w-[300px] md:hover:shadow-[0_20px_18px_rgb(255,255,255,0.1)] md:transition-all md:hover:duration-500 md:h-[450px] md:w-[440px] bg-[#1E293B] rounded-xl overflow-hidden">
-          <img
-            className="h-[160px] w-[300px] md:h-[250px] md:w-[500px] md:hover:scale-105 transition-all duration-500  "
-            src={icons.crypto}
-            alt="crotp"
-          />
-          <div className="mt-4 pl-3 md:pl-5">
-            <span className="text-white font-bold text-xl">
-              Crypto Dashboard
-            </span>
-
-            <span className="flex mt-3 text-gray-300 ">
-              It is a crypto currency dashboard, its made for tracking live data and market of crypto.
-            </span>
-
-            <div className="mt-4 flex gap-2 ">
-              <span className="py-1 px-3 flex items-center text-sm bg-slate-600 font-bold text-gray-200 rounded-2xl">
-                Tailwind CSS
-              </span>
-              <span className="py-1 px-3 flex items-center text-sm bg-slate-600 font-bold text-gray-200 rounded-2xl">
-                React Js
-              </span>
-            </div>
-          </div>
-          <div className="mt-4 pl-4 md:pl-7 flex gap-4">
-            <a
-              href="https://nexora-silk-mu.vercel.app/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-cyan-400 flex items-center gap-1 text-md font-extrabold md:hover:text-purple-500  transition duration-200"
-            >
-              <FiExternalLink /> <span>Live Link</span>
-            </a>
-
-            <a
-              href="https://github.com/sisirsen/Nexora"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-cyan-400 flex items-center gap-1 text-md font-extrabold md:hover:text-purple-500  transition duration-200"
-            >
-              <FiGithub /> <span>Code</span>
-            </a>
-          </div>
         </div>
 
       </div>
+
+      <div className="h-px bg-slate-700 my-10"></div>
+
+      {/* Features */}
+
+      <div className="grid md:grid-cols-2 gap-5">
+
+        {project.features.map((feature) => (
+
+          <div
+            key={feature}
+            className="flex gap-3"
+          >
+
+            <span className="text-cyan-400">
+              ✓
+            </span>
+
+            <span className="text-gray-300">
+              {feature}
+            </span>
+
+          </div>
+
+        ))}
+
+      </div>
+
+      <div className="h-px bg-slate-700 my-10"></div>
+
+      {/* Buttons */}
+
+      <div className="flex gap-8">
+
+        <a
+        target="_Blank"
+        rel="noopener noreferrer"
+          href={project.live}
+          className="text-cyan-400 flex gap-1 items-center hover:text-purple-500"
+        >
+          Live Demo <FiExternalLink/>
+        </a>
+
+        <a
+        target="_Blank"
+        rel="noopener noreferrer"
+        href={project.github}
+        className="text-cyan-400 flex gap-1 items-center hover:text-purple-500"
+        >
+          GitHub <FiGithub/>
+        </a>
+
+      </div>
+
+    </section>
+
+  ))}
+
+</div>
     </div>
   );
 }

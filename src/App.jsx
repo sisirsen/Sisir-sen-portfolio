@@ -7,25 +7,39 @@ import Skills from "./pages/Skills";
 import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
 import ScrollToTop from "./components/buttons/ScrollToTop";
+import { motion } from "framer-motion";
 
 function App() {
   return (
     <>
-      <Navbar />
+
+ <Navbar />
+
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.6 }}
+    >
+     
 
       <Home />
 
       <About />
-      
+
       <Skills />
 
       <Projects />
 
-      <Contact/>
+      <Contact />
 
-<ScrollToTop />
+      <ScrollToTop />
 
-      <Footer />
+      
+    </motion.div>
+
+    <Footer />
+
     </>
   );
 }

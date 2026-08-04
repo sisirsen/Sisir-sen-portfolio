@@ -1,67 +1,71 @@
-import React,{useState} from "react";
+import React, { useState, useEffect } from "react";
 import icons from "../utils/iconAccess";
 
-
-
 function Navbar() {
-
-  const [open, setopen] = useState(false);
-
+  const [open, setOpen] = useState(false);
   const navItems = [
-    { id: 1,item: "Home",path:"#Home" },
-    { id: 2, item: "About", path:"#About"},
-    { id: 3, item: "Skills", path:"#Skills" },
-    { id: 4, item: "Projects", path:"#Projects" },
-    { id: 5, item: "Contact", path:"#Contact" }
+    { id: 1, item: "Home", section: "#home" },
+    { id: 2, item: "About", section: "#about" },
+    { id: 3, item: "Skills", section: "#skills" },
+    { id: 4, item: "Projects", section: "#projects" },
+    { id: 5, item: "Contact", section: "#contact" },
   ];
+
   return (
-    // logo
-    <div className="flex fixed w-full z-50 py-4 px-8 items-center backdrop-blur-2xl bg-black/10 border-b border-white/10">
-      <a href="/" className=" bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent text-2xl font-bold">
+    <div className="fixed top-0 z-50 flex w-full items-center border-b border-white/10 bg-black/10 px-4 py-4 backdrop-blur-2xl md:px-8">
+      {/* Logo */}
+      <a
+        href="/"
+        className="bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-2xl font-bold text-transparent"
+      >
         SISIR SEN
       </a>
-{/* mobile menu button */}
-      <div onClick={()=>{setopen(!open)}} className="md:hidden h-9 w-9 ml-auto p-2 md:hover:bg-cyan-800 rounded-xl transition-all duration-200 active:hover:bg-cyan-800">
+
+      {/* Mobile Menu Button */}
+      <div
+        onClick={() => setOpen(!open)}
+        className="ml-auto h-9 w-9 cursor-pointer rounded-xl p-2 transition-all duration-200 active:bg-cyan-800 md:hidden"
+      >
         <img src={icons.menuButton} alt="menu" />
       </div>
 
+      {/* Desktop Navbar */}
+      <div className="ml-auto hidden gap-9 text-lg md:flex">
+        {navItems.map((item) => (
+          <a
+            key={item.id}
+            href={item.section}
+            className={`relative pb-2 font-medium transition-all duration-300 text-white hover:underline hover:text-cyan-500 underline-offset-8`}
+          >
+            {item.item}
 
-      {/* pc navbar */}
-
-      <div className="hidden md:flex ml-auto gap-9 text-lg text-white cursor-pointer">
-        {navItems.map((items) => (
-          <a key={items.id} href={items.path}  className="hover:underline underline-offset-8 hover:text-cyan-500">
-            {items.item}
+          
           </a>
         ))}
       </div>
 
-
- <div
-        className={`md:hidden absolute right-3 top-17 bg-[#0B1120] border border-cyan-800 rounded-2xl p-5 w-[220px] shadow-lg transition-all duration-300 ${
+      {/* Mobile Navbar */}
+      <div
+        className={`absolute right-3 top-16 w-[220px] rounded-2xl border border-cyan-800 bg-[#0B1120] p-5 shadow-lg transition-all duration-300 md:hidden ${
           open
-            ? "opacity-100 visible translate-y-0"
-            : "opacity-0 invisible -translate-y-5"
+            ? "visible translate-y-0 opacity-100"
+            : "invisible -translate-y-5 opacity-0"
         }`}
       >
-        <div className="flex flex-col gap-5 text-white text-lg">
-          {navItems.map((items) => (
+        <div className="flex flex-col gap-5 text-lg">
+          {navItems.map((item) => (
             <a
-              key={items.id}
-              href={items.path}
-              onClick={() => setopen(false)}
-              className="hover:text-cyan-400 transition-all duration-200"
+              key={item.id}
+              href={item.section}
+              onClick={() => setOpen(false)}
+              className={`transition-all duration-300  text-white hover:underline hover:text-cyan-500 underline-offset-8`}
             >
-              {items.item}
+              {item.item}
             </a>
           ))}
         </div>
       </div>
-
-
     </div>
-
-
   );
 }
 

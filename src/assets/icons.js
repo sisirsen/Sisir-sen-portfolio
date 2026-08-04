@@ -16,15 +16,17 @@ import communication from "./icon/communication.png";
 import teamwork from "./icon/teamwork.jpg";
 import problemsolving from "./icon/problemsolving.jpeg";
 import panctuality from "./icon/panctual.webp";
-import taskmanagementapp from './icon/task_management_app.webp';
-import weatherapp from './icon/weather.jpg';
-import calculatorapp from './icon/calculator.jpg';
-import portfolioapp from './icon/portfolio.jpg';
+import taskmanagement from './icon/taskmanagement.png';
+import weatherapp from './icon/weather.png';
+import calculatorapp from './icon/calculator.png';
+import portfolioapp from './icon/portfolio.png';
 import livelink from './icon/livelink.png'
 import uparrow from './icon/up-arrow.png'
-import crypto from './icon/crypto.webp'
+import nexora from './icon/nexora.png'
+import Dynamic from './icon/Dynamic.jpg'
+import reliability from './icon/reliability.webp'
 
 export default {
 
-  menuButton, linkedinButton, xButton, MyImage, html, tailwind, js, react, java,git, figma, vercel, vscode, github, communication, teamwork, problemsolving, panctuality,taskmanagementapp, weatherapp, calculatorapp, portfolioapp,livelink,uparrow,crypto
+  menuButton, linkedinButton, xButton, MyImage, html, tailwind, js, react, java,git, figma, vercel, vscode, github, communication, teamwork, problemsolving, panctuality,taskmanagement, weatherapp, calculatorapp, portfolioapp,livelink,uparrow,nexora, Dynamic, reliability
 };
