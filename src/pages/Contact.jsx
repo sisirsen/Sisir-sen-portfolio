@@ -27,7 +27,7 @@ function Contact() {
       });
   };
   return (
-    <div id="Contact" className="py-20 p-6 md:p-10 md:py-27">
+    <div id="contact" className="py-20 p-6 md:p-10 md:py-27">
       <div className="flex items-center justify-center text-2xl md:text-4xl text-cyan-500 md:font-extrabold underline underline-offset-10">
         <span className="text-white">
           Get In <span className="text-cyan-500">Touch</span>
@@ -91,6 +91,23 @@ function Contact() {
                   </a>
                 </div>
               </div>
+
+              <div className="mt-10 ">
+  <div className="flex items-center gap-3">
+    <span className="relative flex h-3 w-3">
+      <span className="absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75 animate-ping"></span>
+      <span className="relative inline-flex h-3 w-3 rounded-full bg-green-400"></span>
+    </span>
+
+    <h3 className="font-semibold text-white">
+      Available for Work
+    </h3>
+  </div>
+
+  <p className="mt-3 text-gray-400">
+    Open to internships, full-time opportunities, and collaborations.
+  </p>
+</div>
             </div>
           </div>
         </div>

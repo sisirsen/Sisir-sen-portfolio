@@ -6,11 +6,59 @@ html{
 
 body {
   background: #0F172A;
-  font-family: "Manrope", sans-serif;
-  user-select: none;
+  /* font-family: "Manrope", sans-serif; */
+  /* user-select: none; */
 }
 
 input:-webkit-autofill {
   -webkit-text-fill-color: white;
   transition: background-color 9999s ease-in-out 0s;
+}
+
+@layer utilities {
+  .shine-text {
+    @apply relative inline-block overflow-hidden;
+    background: linear-gradient(
+      90deg,
+      #22d3ee,
+      #3b82f6,
+      #8b5cf6
+    );
+    background-size: 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .shine-text::before {
+    content: "";
+    position: absolute;
+    top: -20%;
+    left: -150%;
+    width: 40%;
+    height: 140%;
+    background: linear-gradient(
+  90deg,
+  #67E8F9,
+  #60A5FA,
+  #A855F7
+);
+    transform: skewX(-20deg);
+    animation: shine 10s ease-in-out infinite;
+  }
+
+  @keyframes shine {
+    0% {
+      left: -150%;
+    }
+
+    8% {
+      left: 150%;
+    }
+
+    100% {
+      left: 150%;
+    }
+  }
 }
