@@ -49,7 +49,7 @@ function Home() {
 
         <div className="flex justify-center md:justify-normal items-center gap-6 mt-8">
           <a
-            href="#Contact"
+            href="#contact"
             className="py-3 px-6 flex justify-center items-center cursor-pointer font-bold text-gray-200 bg-gradient-to-r from-blue-600 to-purple-600 active:from-purple-800 active:to-blue-800 rounded-xl md:hover:-translate-y-1 md:ease-in-out md:hover:shadow-[0_20px_18px_rgb(255,255,255,0.1)] md:hover:transition-all md:hover:duration-500"
           >
             <span className=" animate-pulse font-bold hover:animate-none">Hire Me</span>
