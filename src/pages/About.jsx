@@ -89,7 +89,7 @@ duration-300 `}
           className="py-3 px-5 flex items-center justify-center cursor-pointer font-bold text-gray-200 bg-gradient-to-r from-blue-600 to-purple-600 active:from-purple-800 active:to-blue-800 rounded-3xl md:hover:-translate-y-1 md:ease-in-out md:hover:shadow-[0_20px_18px_rgb(255,255,255,0.1)] md:transition-all md:hover:duration-500">
             Resume <HiOutlineDownload className="h-5 w-5"/>
           </a>
-          <a href="#Contact" className="text-cyan-400 flex justify-center items-center border-2 cursor-pointer active:bg-gray-800 md:hover:bg-gray-800 h-[50px] w-[120px] transition-all duration-200 rounded-3xl">
+          <a href="#contact" className="text-cyan-400 flex justify-center items-center border-2 cursor-pointer active:bg-gray-800 md:hover:bg-gray-800 h-[50px] w-[120px] transition-all duration-200 rounded-3xl">
             Connect
           </a>
         </div>
